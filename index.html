@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página principal de la carrera de Informática Administrativa">
+    <meta name="author" content="Wilmer Montalván">
+    <title>Licenciatura en Informática Administrativa</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+    <script src="js/informatica.js"></script>
+
+    <!-- Selección del centro -->
+    <div class="select-center-container">
+    <label for="center-select">Seleccione su centro:</label>
+    <select id="center-select">
+        <option value="" disabled selected>Seleccione un centro</option>
+        <option value="unah-vs">UNAH-VS</option>
+        <option value="unah-teg">UNAH-Tegucigalpa</option>
+        <option value="unah-curc">UNAH-CURC</option>
+    </select>
+    </div>
+
+    <!-- Contenido dinámico basado en el centro -->
+    <div class="center-data" id="unah-vs" style="display:none;">
+    <h2>Contenido para UNAH-VS</h2>
+    <p>Bienvenido al contenido exclusivo para el campus UNAH Valle de Sula.</p>
+    </div>
+
+    <div class="center-data" id="unah-teg" style="display:none;">
+    <h2>Contenido para UNAH-Tegucigalpa</h2>
+    <p>Bienvenido al contenido exclusivo para el campus UNAH Tegucigalpa.</p>
+    </div>
+
+    <div class="center-data" id="unah-curc" style="display:none;">
+    <h2>Contenido para UNAH-CURC</h2>
+    <p>Bienvenido al contenido exclusivo para el campus UNAH Comayagua.</p>
+    </div>
+
+    <!-- Esquinas de colores UNAH -->
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+
+    <!-- Animación de carga -->
+    <div class="loader"></div>
+
+    <!-- Contenido principal oculto inicialmente -->
+    <div class="main-content" style="display: none;">
+        <!-- Franja superior -->
+        <div class="franja-blanca"></div>
+
+        <!-- Barra de navegación -->
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="imagenes/logo.png" alt="Logo Informática Administrativa" title="Portal Informática Administrativa">
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="https://informatica-portal.com/UNAHVS/apps/nuevo-plan-de-estudio" class="nav-link">Portal de la carrera</a></li>
+                    <li><a href="mapa de clases.html" class="nav-link">Pensum actualizado</a></li>
+                    <li><a href="jefatura y coordinacion.html" class="nav-link">Jefatura y coordinación</a></li>
+                    <li><a href="autoridades.html" class="nav-link">Autoridades estudiantiles</a></li>
+                    <li><a href="Comites.html" class="nav-link">Comités y grupos</a></li>
+                    <li><a href="docentes.html" class="nav-link">Docentes</a></li>
+                    <li><a href="contacto.html" target="nav-link">Contáctanos</a></li>
+                    <li><a href="#IIICAP-IA" target="nav-link">IIICAP-IA</a></li>
+                </ul>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <!-- Contenedor principal del banner -->
+        <div class="banner-container">
+            <div class="banner-slide concept-one">
+                <h1>Lenguajes de Programación</h1>
+            </div>
+            <div class="banner-slide concept-two">
+                <h1>Bases de Datos</h1>
+            </div>
+            <div class="banner-slide concept-three">
+                <h1>Redes</h1>
+            </div>
+            <div class="banner-slide concept-four">
+                <h1>Sistemas Operativos</h1>
+            </div>
+            <div class="banner-slide concept-five">
+                <h1>Ciberseguridad</h1>
+            </div>
+        </div>
+
+        <!-- Bienvenida -->
+        <div class="bienvenida" style="text-align: center; margin: 20px auto;">
+            <p>
+                Dentro de esta excepcional carrera se preparará al estudiante en múltiples disciplinas y ramas dentro de la informática.
+                Aquí podrá visualizar algunas de las áreas que abarca esta maravillosa carrera. <strong>¡Bienvenidos pumitas, a Informática Administrativa!</strong>
+            </p>
+        </div>
+
+        <!-- Sección de Artículos -->
+        <section class="articulos">
+            <article onclick="window.location.href='https://informatica-portal.com/UNAHVS/apps/home';" style="cursor: pointer;">
+                <h2>Portal de la carrera</h2>
+                <p>Explora herramientas únicas de la carrera como documentación de expedientes de graduación, cancelaciones de clases, práctica profesional y más.</p>
+            </article>
+            <article onclick="window.location.href='autoridades.html';" style="cursor: pointer;">
+                <h2>Representantes estudiantiles</h2>
+                <p>Conoce todo sobre los representantes estudiantiles de la carrera, desde la directiva hasta otros cargos relacionados.</p>
+            </article>
+            <article onclick="window.location.href='Jefatura y coordinacion.html';" style="cursor: pointer;">
+                <h2>Jefatura y coordinación</h2>
+                <p>Infórmate sobre las autoridades del departamento como la jefatura y la coordinación.</p>
+            </article>
+            <article onclick="window.location.href='Comites.html';" style="cursor: pointer;">
+                <h2>Comités y grupos de la carrera</h2>
+                <p>Descubre los comités de vida estudiantil, investigación científica y otros organismos.</p>
+            </article>
+            <article onclick="window.location.href='docentes.html';" style="cursor: pointer;">
+                <h2>Docentes de la carrera</h2>
+                <p>Conoce a todos los docentes que imparten clases y una breve descripción de su experiencia.</p>
+            </article>
+            <article onclick="window.location.href='mapa de clases.html';" style="cursor: pointer;">
+                <h2>Mapa de clases</h2>
+                <p>Revisa el paso a paso de todas las clases disponibles y cómo planificar tu carrera eficientemente.</p>
+            </article>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 - 2025 Licenciatura en Informática Administrativa, UNAH - Campus Cortés</p>
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="https://www.tiktok.com/@informaticavs4">
+                        <img src="imagenes/tik-tok.png" alt="TikTok" class="social-icon">
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61550018352906">
+                        <img src="imagenes/facebook.png" alt="Facebook" class="social-icon">
+                    </a>
+                    <a href="https://chat.whatsapp.com/HZwtQN8BTyX1H6x0hhRybG">
+                        <img src="imagenes/whatapp.png" alt="WhatsApp grupo principal" class="social-icon">
+                    </a>
+                    <a href="https://chat.whatsapp.com/IbqAnWb5DK5LOsiADthgPx">
+                        <img src="imagenes/whatsapp platica.png" alt="WhatsApp plática general" class="social-icon">
+                    </a>
+                </div>
+                <div class="sello-container">
+                    <img src="imagenes/sellos-actualizado-2024-04.png" alt="Sellos de acreditación" class="sello-image">
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/informatica_mod.js"></script>
+    <script>
+        // Ocultar la animación de carga y mostrar el contenido cuando la página esté lista
+        window.addEventListener('load', function() {
+            document.querySelector('.loader').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        });
+
+        // Toggle para mostrar el menú en dispositivos móviles
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        window.addEventListener('load', function() {
+        const selectContainer = document.querySelector('.select-center-container');
+        const contentContainers = document.querySelectorAll('.center-data');
+
+        // Mostrar contenido basado en la selección del centro
+        document.getElementById('center-select').addEventListener('change', function() {
+        const selectedCenter = this.value;
+
+        // Ocultar todos los contenidos
+        contentContainers.forEach(function(element) {
+            element.style.display = 'none';
+        });
+
+        // Mostrar el contenido correspondiente al centro seleccionado
+        if (selectedCenter) {
+            document.getElementById(selectedCenter).style.display = 'block';
+        }
+        });
+    });
+    
+    </script>
+    <div id="chatbot-container">
+        <!-- Burbuja del chat -->
+        <div id="chat-bubble">
+            💬
+            <span id="chat-help-message" class="hidden">Ayuda</span>
+        </div>
+    
+        <!-- Contenedor completo del chat -->
+        <div id="chat-full-container">
+            <div id="chat-header">
+                <span>Chatbot</span>
+                <button id="minimize-btn">➖</button>
+            </div>
+            <div id="chat-messages">
+                <!-- Los mensajes del chat aparecerán aquí -->
+            </div>
+            <div id="chat-input-area">
+                <input id="chat-input-field" type="text" placeholder="Escribe tu mensaje aquí..." />
+                <button id="chat-send-btn">Enviar</button>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Scripts -->
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

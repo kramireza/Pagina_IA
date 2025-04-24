@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Wilmer Montalván">
+    <meta name="description" content="Página principal Informática">
+    <title>Contáctanos</title>
+    <link rel="stylesheet" type="text/css" href="css/contacto.css">
+</head>
+<body>
+    <div class="franja-amarilla"></div>
+    <header>
+        <h1>Contáctanos</h1>
+        <!-- Navbar responsivo -->
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="imagenes/logo.png" alt="Logo Informática Administrativa" title="Portal Informática Administrativa">
+            </div>
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="hola mundo.html" target="nav-link">Inicio</a></li>
+                    <li><a href="https://informatica-portal.com/UNAHVS/apps/nuevo-plan-de-estudio" class="nav-link">Portal de la carrera</a></li>
+                    <li><a href="mapa de clases.html" class="nav-link">Pensum actualizado</a></li>
+                    <li><a href="jefatura y coordinacion.html" class="nav-link">Jefatura y coordinación</a></li>
+                    <li><a href="autoridades.html" class="nav-link">Autoridades estudiantiles</a></li>
+                    <li><a href="Comites.html" class="nav-link">Comités y grupos</a></li>
+                    <li><a href="docentes.html" class="nav-link">Docentes</a></li>
+                    <li><a href="contacto.html" target="nav-link">Contáctanos</a></li>
+                    <li><a href="#IIICAP-IA" target="nav-link">IIICAP-IA</a></li>
+                </ul>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+<body>
+
+    <main>
+        <section>
+            <p>Esta es la página de contacto. Completa el formulario para enviarnos tus datos.</p>
+        </section>
+
+        <!-- Contenedor centrado -->
+        <section id="contacto">
+            <div class="form-container">
+                <h2>Formulario de contacto</h2>
+                <form action="/procesar_formulario" method="POST">
+                    <label for="nombre-completo">Nombre completo:</label>
+                    <input type="text" id="nombre-completo" name="nombre_completo" required>
+
+                    <label for="numero-cuenta">email:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@unah.hn" required>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="####-####" required>
+
+                    <label for="mensaje">Cuerpo del correo :</label>
+                    <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 - 2025 Licenciatura en Informática Administrativa, UNAH - Campus Cortés</p>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.tiktok.com/@informaticavs4">
+                    <img src="imagenes/tik-tok.png" alt="TikTok" class="social-icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61550018352906">
+                    <img src="imagenes/facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://chat.whatsapp.com/HZwtQN8BTyX1H6x0hhRybG">
+                    <img src="imagenes/whatapp.png" alt="WhatsApp grupo principal" class="social-icon">
+                </a>
+                <a href="https://chat.whatsapp.com/IbqAnWb5DK5LOsiADthgPx">
+                    <img src="imagenes/whatsapp platica.png" alt="WhatsApp plática general" class="social-icon">
+                </a>
+            </div>
+            <div class="sello-container">
+                <img src="imagenes/sellos-actualizado-2024-04.png" alt="Sellos de acreditación" class="sello-image">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

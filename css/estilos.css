@@ -1,0 +1,521 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Comfortaa", sans-serif;
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+/*body::before {
+    content: "";
+    position: fixed; /* Fijo para que no se desplace al hacer scroll 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../imagenes/lucem.jpg"); /* Ruta real de la imagen 
+    background-size: contain; /* Ajusta el tamaño de la imagen 
+    background-position: center bottom; /* Centrado horizontal y cerca del borde inferior 
+    background-repeat: no-repeat; /* No repetir la imagen 
+    opacity: 0.05; /* Hace la imagen muy tenue 
+    z-index: -1; /* Asegura que está detrás de todos los elementos 
+    pointer-events: none; /* Evita que interfiera con la interacción de otros elementos */
+
+
+
+/* Esquinas en colores UNAH */
+body::before,
+body::after,
+body div.corner {
+    content: "";
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+}
+
+body::before {
+    background-color: #FFD700;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 50%;
+}
+
+body::after {
+    background-color: #004080;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 50%;
+}
+
+body div.corner.bottom-left {
+    background-color: #004080;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 50%;
+}
+
+body div.corner.bottom-right {
+    background-color: #FFD700;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 50%;
+}
+
+/* Franjas blancas */
+/*.franja-blanca {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+}*/
+
+/* Navbar centrado */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    background-color: #004080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor del logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.logo-container img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Links del navbar */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FFD700;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-links a:hover {
+    background-color: #FFD700;
+    color: #004080;
+    border-color: #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Ajustes móviles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 16px;
+    }
+
+    .nav-links a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .logo-container img {
+        max-width: 80px;
+        height: auto;
+    }
+}
+
+/* Contenedor de Banner */
+.banner-container {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    height: 30vh;
+    scroll-snap-type: x mandatory;
+    position: relative;
+    scrollbar-width: none;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+}
+
+.banner-container::-webkit-scrollbar {
+    display: none;
+}
+
+.banner-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Contenedor de Bienvenida */
+.Bienvenida {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 80px auto 40px auto;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.Bienvenida:hover {
+    transform: translateY(-5px);
+    background-color: #004080;
+}
+
+.Bienvenida:hover h2,
+.Bienvenida:hover p {
+    color: #FFD700;
+}
+
+.Bienvenida h2 {
+    color: #0078D4;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.Bienvenida p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Backgrounds para Conceptos */
+.banner-slide.concept-one {
+    background-image: url('../imagenes/LENGUAJES DE PROGRAMACION.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-slide.concept-two { 
+    background-image: url('../imagenes/Bases de datos.png');
+    background-size: cover;
+    background-position: center;
+ }
+
+.banner-slide.concept-three { 
+    background-image: url('../imagenes/Redes.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-slide.concept-four { 
+    background-image: url('../imagenes/sistemas_operativos.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-slide.concept-five { 
+    background-image: url('../imagenes/Ciberseguridad.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Artículos */
+.articulos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.articulos article {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.articulos article:hover {
+    transform: translateY(-5px);
+    background-color: #004080;
+}
+
+.articulos article:hover h2,
+.articulos article:hover p {
+    color: #FFD700;
+}
+
+.articulos h2 {
+    color: #0078D4;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.articulos p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.articulos a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #004080; 
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #F8F9FA;
+    color: #333;
+    padding: 1em 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Los hijos no se amontonarán */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+footer .social-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.sello-container {
+    display: flex;
+    align-items: center;
+}
+
+.sello-container .sello-image {
+    height: 45px;
+    filter: brightness(0.9); 
+}
+
+@media (max-width: 768px) {
+    .footer-content img {
+        max-width: 30px;
+    }
+}
+
+/* Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el dropdown */
+.select-center-container {
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.select-center-container label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.select-center-container select {
+    font-size: 16px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilos para los bloques dinámicos */
+.center-data {
+    display: none;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.center-data h2 {
+    color: #0057a6;
+}
+/* Estilo principal del chatbot */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Estilo de la burbuja */
+#chat-bubble {
+    display: none;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s infinite;
+}
+
+#chat-help-message {
+    position: absolute;
+    bottom: 65px;
+    background-color: #007bff;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animación de la burbuja */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Contenedor del chat completo */
+#chat-full-container {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Header del chat */
+#chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Área de mensajes */
+#chat-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Input y botón de enviar */
+#chat-input-area {
+    display: flex;
+    padding: 10px;
+}
+
+#chat-input-field {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+#chat-send-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#chat-send-btn:hover {
+    background-color: #0056b3;
+}

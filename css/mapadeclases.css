@@ -1,0 +1,262 @@
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* Azul UNAH de fondo */
+    color: white; /* Color de texto blanco para contrastar */
+}
+
+/* Enlace sin subrayado para el Mapa de clases y otros enlaces de navegación */
+.nav-link {
+    color: inherit; 
+    text-decoration: none; 
+}
+
+.franja-azul {
+    background-color: #004080; 
+    height: 50px; 
+    width: 100%; 
+}
+
+h1, h2, h3, h4 {
+    font-size: 2em; 
+    font-weight: bold;
+    color: #FFD700; 
+    text-align: center; 
+    margin: 20px 0;
+}
+
+header {
+    background-color: #004080; 
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    background-color: #ffffff; 
+    color: #333; 
+}
+
+footer {
+    background-color: #004080; 
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #F8F9FA;
+    color: #333;
+    padding: 1em 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Los hijos no se amontonarán */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+footer .social-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.sello-container {
+    display: flex;
+    align-items: center;
+}
+
+.sello-container .sello-image {
+    height: 45px;
+    filter: brightness(0.9); 
+}
+
+.plan-estudios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.plan-estudios th, .plan-estudios td {
+    border: 1px solid #ddd;
+    padding: 12px; 
+    text-align: center;
+}
+
+.plan-estudios th {
+    background-color: #004080; 
+    color: white;
+    padding: 15px;
+}
+
+.plan-estudios tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.plan-estudios tr:hover {
+    background-color: #ffd700; 
+}
+
+.requisito-dependiente {
+    background-color: #ffd700; 
+}
+
+.tooltip {
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    border-radius: 5px;
+    display: none; 
+    z-index: 1000;
+    font-size: 0.9rem;
+}
+
+/* Navbar centrado */
+.navbar {
+    position: static;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra la barra dentro del contenedor */
+    background-color: #004080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Estilos para el contenedor de logo */
+
+.logo-container img {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Contenedor para los links del navbar */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Links dentro del navbar */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+/* Estilos para los links del navbar */
+.nav-links a {
+    text-decoration: none;
+    color: #FFD700;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+.nav-links a:hover {
+    background-color: #FFD700;
+    color: #004080;
+    border-color: #FFD700;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #FFD700; 
+    margin: 3px 0;
+}
+
+
+/* ============================
+   Navbar Estilo Responsive
+   ============================ */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #004080; 
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Ajustar el footer en pantallas pequeñas */
+    .footer-content {
+        flex-direction: column; /* Elementos en columna */
+        text-align: center;
+    }
+
+    /* Asegurar que las tablas no se desborden */
+    .plan-estudios {
+        display: block; 
+        overflow-x: auto; /* Scroll horizontal si la tabla se desborda */
+    }
+
+    /* Evitar que las imágenes se salgan de la pantalla */
+    img {
+        max-width: 100%; 
+        height: auto; 
+    }
+
+    /* Evitar que las columnas del footer se superpongan */
+    .footer-content, 
+    .social-icons, 
+    .sello-container {
+        width: 100%; 
+        justify-content: center; 
+    }
+
+    /* Asegurar que los textos no se desborden */
+    h1, h2, h3, h4 {
+        font-size: 1.5em; 
+        text-align: center;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
