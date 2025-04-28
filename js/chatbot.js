@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer YOUR_OPENAI_API_KEY` // Reemplaza con tu clave de API
+                'Authorization': `Bearer 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` // Reemplaza con tu clave de API
             },
             body: JSON.stringify({
                 model: "text-davinci-003", // Escoge el modelo que necesites
