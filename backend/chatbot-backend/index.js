@@ -1,39 +1,40 @@
+const path = require('path');
+console.log("RUTA ACTUAL:", __dirname);
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
+console.log("OPENAI_API_KEY:", process.env.OPENAI_API_KEY);
+
 const express = require('express');
 const cors = require('cors');
-const { Configuration, OpenAIApi } = require('openai');
-require('dotenv').config();
+const OpenAI = require('openai');
 
 const app = express();
 const port = 3000;
 
+console.log("OPENAI_API_KEY:", process.env.OPENAI_API_KEY);
+
 app.use(cors());
 app.use(express.json());
 
-const openai = new OpenAIApi(new Configuration({
-  apiKey: process.env.OPENAI_API_KEY
-}));
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
+});
 
 app.post('/api/chat', async (req, res) => {
-  const userMessage = req.body.prompt;
+    const { prompt } = req.body;
 
-  if (!userMessage) {
-    return res.status(400).json({ error: 'Prompt vacío' });
-  }
+    try {
+        const completion = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: prompt }]
+        });
 
-  try {
-    const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: userMessage }]
-    });
-
-    const botResponse = completion.data.choices[0].message.content.trim();
-    res.json({ response: botResponse });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).json({ error: "Error al conectar con OpenAI" });
-  }
+        res.json({ response: completion.choices[0].message.content });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Error al generar respuesta del bot" });
+    }
 });
 
 app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+    console.log(`Servidor escuchando en http://localhost:${port}`);
 });
